@@ -38,7 +38,7 @@ app.use(offerRoutes);
 // faire la route app.all (toujours la laisser tout en bas)
 app.all("*", (req, res) => {
   try {
-    res.status(404).json("Not found");
+    res.status(404).json("Route not found");
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
