@@ -36,6 +36,18 @@ app.use(userRoutes);
 const offerRoutes = require("./routes/offer");
 app.use(offerRoutes);
 
+app.get("/", (req, res) => {
+  try {
+    res
+      .status(200)
+      .json({
+        message:
+          "Bienvenue sur mon serveur vinted hébergé gratuitement (pour l'instant) par Northflank",
+      });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
 // faire la route app.all (toujours la laisser tout en bas)
 app.all("*", (req, res) => {
   try {
