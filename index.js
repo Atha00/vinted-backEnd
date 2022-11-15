@@ -4,7 +4,7 @@ console.log(process.env);
 const express = require("express");
 // import du package mongoose
 const mongoose = require("mongoose");
-
+const cors = require("cors");
 // import du package cloudinary
 const cloudinary = require("cloudinary").v2;
 
@@ -18,6 +18,7 @@ cloudinary.config({
 // créer notre serveur
 const app = express();
 
+app.use(cors());
 // utiliser express.json pour pouvoir lire les paramètres de type body (middleware global) :
 app.use(express.json());
 
